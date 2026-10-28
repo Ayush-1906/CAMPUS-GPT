@@ -29,6 +29,28 @@ CampusGPT is a Retrieval-Augmented Generation (RAG) application built with Pytho
 - **Google Gemini API** (`google-genai`) — answer generation
 - **python-dotenv** — local environment variable loading
 
+## 🏗️ RAG Architecture
+
+```mermaid
+flowchart TD
+    A["Upload PDF files"] --> B["Streamlit App"]
+    B --> C["Extract text and page numbers<br/>PyMuPDF"]
+    C --> D["Split text into overlapping chunks"]
+    D --> E["Generate embeddings<br/>all-MiniLM-L6-v2"]
+    E --> F[("Document chunks and embeddings")]
+
+    U["Ask a question"] --> Q["Embed question"]
+    Q --> R["Calculate cosine similarity"]
+    F --> R
+    R --> S["Retrieve top 5 chunks"]
+    S --> T{"Similarity >= 0.30?"}
+
+    T -- No --> V["Decline unsupported question"]
+    T -- Yes --> G["Send question and context to Gemini"]
+    G --> H["Generate answer"]
+    H --> I["Display answer with source and page citations"]
+```
+
 ## 🔄 How it works
 
 ```text
