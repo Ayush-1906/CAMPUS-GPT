@@ -1,0 +1,31 @@
+
+[
+  {
+    "question": "Which technologies is the candidate currently learning?",
+    "expected_behavior": "answer",
+    "expected_keywords": ["NumPy", "Pandas", "SQL", "FastAPI", "Machine Learning"],
+    "expected_source": "resume.pdf",
+    "expected_page": 1
+  },
+  {
+    "question": "What is the candidate's monthly salary?",
+    "expected_behavior": "refuse",
+    "expected_keywords": [],
+    "expected_source": "resume.pdf",
+    "expected_page": 1
+  },
+  {
+    "question": "What is the candidate's CGPA?",
+    "expected_behavior": "answer",
+    "expected_keywords": ["5.71"],
+    "expected_source": "resume.pdf",
+    "expected_page": 1
+  },
+  {
+    "question": "What is the candidate's date of birth?",
+    "expected_behavior": "refuse",
+    "expected_keywords": [],
+    "expected_source": "resume.pdf",
+    "expected_page": 1
+  }
+]

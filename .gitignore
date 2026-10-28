@@ -1,0 +1,12 @@
+# Secrets
+.env
+
+# Virtual environment
+.venv/
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Local documents and generated RAG data
+data/
